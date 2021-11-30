@@ -7,6 +7,6 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - uses: dunklesToast/eslint-action@v1
+      - uses: dunklesToast/eslint-action
       - run: echo eslit validation
       - run: echo thats easy
