@@ -4,9 +4,9 @@ jobs:
   eslit-validation:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - uses: dunklesToast/eslint-action@v1
       - run: echo eslit validation
       - run: echo thats easy
-  pmd-validation:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo a tera pmd
