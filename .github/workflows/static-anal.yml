@@ -1,0 +1,12 @@
+name: static-anal
+on: [push]
+jobs:
+  eslit-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo eslit validation
+      - run: echo thats easy
+  pmd-validation:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo a tera pmd
