@@ -5,7 +5,7 @@ jobs:
     name: Publish binaries
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2.2.1
+      - uses: actions/checkout@v2
       - name: Build
         run: echo test
       - name: Upload files to a GitHub release
