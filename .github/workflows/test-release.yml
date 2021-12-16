@@ -1,0 +1,19 @@
+name: Test add file to release
+on: release
+  jobs:
+    build:
+      name: Publish binaries
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@2.2.1
+        - name: Build
+          run: echo test
+        - name: Upload binaries to release
+          uses: svenstaro/upload-release-action@v2
+          with:
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            file: README.md
+            asset_name: readmetest
+            tag: ${{ github.ref }}
+            overwrite: true
+            body: "This is my release text"
