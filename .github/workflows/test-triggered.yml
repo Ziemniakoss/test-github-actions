@@ -19,7 +19,7 @@ jobs:
       - run: echo test
       - run: echo ${{ github.event.inputs.message}}
       - run: echo ${{ github.event.inputs.other}}
-      - run: npm version major --git-tag-version
       - run: git config --global user.name '${GITHUB_ACTOR}' && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+      - run: npm version major --git-tag-version
       - run: git commit -am "Release major"
       - run: git push origin HEAD
