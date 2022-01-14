@@ -15,6 +15,6 @@ jobs:
     name: "Release Major"
     runs-on: ubuntu-20.04
     steps:
-      - uses: ./.github/actions/reusable@master
+      - uses: ./.github/workflows/reusable@master
         with:
           version_type: patch
