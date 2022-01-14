@@ -1,0 +1,18 @@
+on:
+  workflow_call:
+    inputs:
+      version_type:
+        type: string
+        required: true
+jobs:
+  print-message:
+    name: "Up version"
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+      - run: echo test
+      - run: echo ${{ github.event.inputs.message}}
+      - run: echo ${{ github.event.inputs.other}}
+      - run: git config --global user.name '${GITHUB_ACTOR}' && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
+      - run: export VERSION=$(npm version ${{ inputs.version_type }})
+      - run: git push --follow-tags origin HEAD
