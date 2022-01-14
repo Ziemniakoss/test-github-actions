@@ -13,6 +13,6 @@ on:
 jobs:
   release_major:
     name: "Release Major"
-    uses: Ziemniakoss/test-github-actions/.github/workflows/r.yml@master
+    uses: ./.github/workflows/r.yml@master
     with:
       version_type: patch
