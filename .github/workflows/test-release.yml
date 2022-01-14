@@ -6,14 +6,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: Build
-        run: echo test
-      - name: Upload files to a GitHub release
-        uses: svenstaro/upload-release-action@2.2.1
-        with:
-          repo_token: ${{ secrets.GITHUB_TOKEN }}
-          file: README.md
-          asset_name: readmetest
-          tag: ${{ github.ref }}
-          overwrite: true
-          body: "This is my release text"
+      - run: echo ${{GITHUB_USER}}
+      -run: echo ${GITHUB_USER}
+        - name: Build
+          run: echo test
+        - name: Upload files to a GitHub release
+          uses: svenstaro/upload-release-action@2.2.1
+          with:
+            repo_token: ${{ secrets.GITHUB_TOKEN }}
+            file: README.md
+            asset_name: readmetest
+            tag: ${{ github.ref }}
+            overwrite: true
+            body: "This is my release text"
