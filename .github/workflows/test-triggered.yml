@@ -20,7 +20,8 @@ jobs:
       - run: echo ${{ github.event.inputs.message}}
       - run: echo ${{ github.event.inputs.other}}
       - run: git config --global user.name '${GITHUB_ACTOR}' && git config --global user.email '${GITHUB_ACTOR}@users.noreply.github.com'
-      - run: VERSION=$(npm version major)
+      - run: export VERSION=$(npm version major)
+      - run: git log --format=oneline | head
       - run: echo $VERSION
       - run: git commit -am "Release major"
       - run: git tag $VERSION
