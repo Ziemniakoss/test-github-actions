@@ -15,6 +15,7 @@ jobs:
     name: "Up version"
     runs-on: ubuntu-20.04
     steps:
+      - uses: actions/checkout@v2
       - run: echo test
       - run: echo ${{ github.event.inputs.message}}
       - run: echo ${{ github.event.inputs.other}}
