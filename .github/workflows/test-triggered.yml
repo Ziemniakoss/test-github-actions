@@ -13,8 +13,6 @@ on:
 jobs:
   release_major:
     name: "Release Major"
-    runs-on: ubuntu-20.04
-    steps:
-      - uses: ziemniakoss/learn-github-actions/.github/workflows/reusable.yml@master
-        with:
-          version_type: patch
+    uses: ziemniakoss/learn-github-actions/.github/workflows/reusable.yml@master
+    with:
+      version_type: patch
