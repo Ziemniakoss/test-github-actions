@@ -12,8 +12,11 @@ on:
         required: false
 jobs:
   print-message:
+    name: "Up version"
     runs-on: ubuntu-20.04
     steps:
       - run: echo test
       - run: echo ${{ github.event.inputs.message}}
       - run: echo ${{ github.event.inputs.other}}
+      - run: npm version major --git-tag-version
+      - run: git push
