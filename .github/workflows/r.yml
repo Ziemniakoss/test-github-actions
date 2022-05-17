@@ -13,6 +13,7 @@ jobs:
       - name: Adding markdown
         run: echo '### Hello world! :rocket:' >> $GITHUB_STEP_SUMMARY
       - uses: actions/checkout@v2
+      - run: ls
       - run: echo test
       - run: echo ${{ github.event.inputs.message}}
       - run: echo ${{ github.event.inputs.other}}
