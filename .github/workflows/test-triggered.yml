@@ -13,6 +13,6 @@ on:
 jobs:
   release_major:
     name: "Release Major"
-    uses: ./.github/workflows/r.yml@master
+    uses: ./.github/workflows/r.yml
     with:
       version_type: patch
